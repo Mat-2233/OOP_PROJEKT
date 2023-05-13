@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_projekt.HelloController">
+    <children>
+        <Label layoutX="243.0" layoutY="62.0" text="Vitajte">
+            <font>
+                <Font size="37.0" />
+            </font>
+        </Label>
+        <Button fx:id="btn1" layoutX="81.0" layoutY="241.0" mnemonicParsing="false" onAction="#goToPlanovanie" text="Chcete naplánovať cestu?" />
+        <Button fx:id="btn2" layoutX="397.0" layoutY="248.0" mnemonicParsing="false" onAction="#goToSomnaceste" text="Chcete sprevádzať?" />
+    </children>
+</AnchorPane>
