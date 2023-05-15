@@ -10,6 +10,10 @@ package com.example.oop_projekt;
         import javafx.stage.Stage;
         import java.io.IOException;
 
+
+/**
+ * táto scéna slúži na rozhodnutie či chceme plánovať výlet podla destinácií alebo podla atrakcií
+ */
 public class PlanovanieController {
 
     @FXML

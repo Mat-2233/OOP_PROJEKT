@@ -1,5 +1,7 @@
 package com.example.oop_projekt;
 
+import com.example.oop_projekt.Invl_exp.Invalid_expection;
+import com.example.oop_projekt.NovyTrip.NovyTrip;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,123 +14,135 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * volba ktoré mestá chce uživatel navštíviť a následne vola atrakcií
+ */
 public class DestinacieController {
     @FXML
-    Label tren;
+    private Label tren;
     @FXML
-    CheckBox tl;
+    private CheckBox tl;
     @FXML
-    CheckBox tr;
+    private CheckBox tr;
     @FXML
-    CheckBox th;
+    private CheckBox th;
     @FXML
-    Label brat;
+    private Label brat;
     @FXML
-    CheckBox bl;
+    private CheckBox bl;
     @FXML
-    CheckBox br;
+    private CheckBox br;
 
     @FXML
-    CheckBox bsp;
+    private CheckBox bsp;
 
     @FXML
-    Label zil;
+    private Label zil;
     @FXML
-    CheckBox zj;
+    private CheckBox zj;
     @FXML
-    CheckBox zt;
+    private CheckBox zt;
     @FXML
-    CheckBox zsp;
+    private CheckBox zsp;
     @FXML
-    Label tatr;
+    private Label tatr;
     @FXML
-    CheckBox ttj;
+    private CheckBox ttj;
     @FXML
-    CheckBox ttl;
+    private CheckBox ttl;
     @FXML
-    CheckBox ttt;
+    private CheckBox ttt;
 
     @FXML
-    Label kosi;
+    private Label kosi;
 
     @FXML
-    CheckBox kh;
+    private CheckBox kh;
     @FXML
-    CheckBox kj;
+    private CheckBox kj;
     @FXML
-    CheckBox ks;
+    private CheckBox ks;
     @FXML
-    CheckBox trencin;
+    private CheckBox trencin;
     @FXML
-    CheckBox bratislava;
+    private CheckBox bratislava;
     @FXML
-    CheckBox zilina;
+    private CheckBox zilina;
     @FXML
-    CheckBox tatry;
+    private CheckBox tatry;
     @FXML
-    CheckBox kosice;
+    private CheckBox kosice;
 
     @FXML
     private Button urob;
     @FXML
     private Button zvolit;
+    @FXML
+    private Label lab;
 
-    NovyTrip novyTrip = new NovyTrip();
+    private NovyTrip novyTrip = new NovyTrip();
 
+    /**
+     *volenie destinácií
+     */
     @FXML
     private void vykonaj(ActionEvent event) throws IOException {
-
-
-
-
-
         //trencin
-        if (trencin.isSelected()) {
-            tren.setVisible(true);
-            tl.setVisible(true);
-            tr.setVisible(true);
-            th.setVisible(true);
-        }
+        try {
+            novyTrip.Overenie2(trencin,kosice,tatry,zilina,bratislava);
 
-        //bratislava
-        if (bratislava.isSelected()) {
-            brat.setVisible(true);
-            bl.setVisible(true);
-            br.setVisible(true);
-            bsp.setVisible(true);
-        }
-        //Žilina
-        if (zilina.isSelected()) {
-            zil.setVisible(true);
+
+            if (trencin.isSelected()) {
+                tren.setVisible(true);
+                tl.setVisible(true);
+                tr.setVisible(true);
+                th.setVisible(true);
+            }
+
+            //bratislava
+            if (bratislava.isSelected()) {
+                brat.setVisible(true);
+                bl.setVisible(true);
+                br.setVisible(true);
+                bsp.setVisible(true);
+            }
+            //Žilina
+            if (zilina.isSelected()) {
+                zil.setVisible(true);
                 zj.setVisible(true);
                 zt.setVisible(true);
                 zsp.setVisible(true);
+            }
+            //Tatry
+            if (tatry.isSelected()) {
+                tatr.setVisible(true);
+                ttj.setVisible(true);
+                ttt.setVisible(true);
+                ttl.setVisible(true);
+            }
+            //Kosice
+            if (kosice.isSelected()) {
+                kosi.setVisible(true);
+                kh.setVisible(true);
+                kj.setVisible(true);
+                ks.setVisible(true);
+            }
+            trencin.setVisible(false);
+            bratislava.setVisible(false);
+            zilina.setVisible(false);
+            tatry.setVisible(false);
+            kosice.setVisible(false);
+            urob.setVisible(false);
+            zvolit.setVisible(true);
+        }catch (Invalid_expection ex) {
+            lab.setText(ex.getMessage());
         }
-        //Tatry
-        if (tatry.isSelected()) {
-            tatr.setVisible(true);
-            ttj.setVisible(true);
-            ttt.setVisible(true);
-            ttl.setVisible(true);
-        }
-        //Kosice
-        if (kosice.isSelected()) {
-            kosi.setVisible(true);
-            kh.setVisible(true);
-            kj.setVisible(true);
-            ks.setVisible(true);
-        }
-        trencin.setVisible(false);
-        bratislava.setVisible(false);
-        zilina.setVisible(false);
-        tatry.setVisible(false);
-        kosice.setVisible(false);
-        urob.setVisible(false);
     }
 
 
-
-
+    /**
+     * vytváranie objektov pre dané destinácie a prechod do ďaľšej scény
+     */
     @FXML
     private void zvol (ActionEvent event) throws IOException {
         if(tl.isSelected()|| tr.isSelected()|| th.isSelected())

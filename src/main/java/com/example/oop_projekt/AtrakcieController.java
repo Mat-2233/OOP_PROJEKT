@@ -1,9 +1,11 @@
 package com.example.oop_projekt;
 
+import com.example.oop_projekt.Invl_exp.Invalid_expection;
+import com.example.oop_projekt.NovyTrip.NovyTrip;
+import com.example.oop_projekt.obs_implem.Stav;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,71 +13,73 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import java.io.IOException;
 
+/**
+ * volba atrakcií ktoré chce uživatel zažiť a násled kontrétna voľba v mestách
+ */
 public class AtrakcieController {
     @FXML
-    CheckBox lezenie;
+    private Label lab;
     @FXML
-    CheckBox rafting;
+    private CheckBox lezenie;
+    @FXML
+    private CheckBox rafting;
 
     @FXML
-    CheckBox skok_padakom;
+    private CheckBox skok_padakom;
 
     @FXML
-    CheckBox jaskyne;
+    private CheckBox jaskyne;
     @FXML
-    CheckBox turistika;
+    private CheckBox turistika;
 
     @FXML
-    CheckBox hrad;
+    private CheckBox hrad;
     @FXML
-    Label tren;
+    private Label tren;
     @FXML
-    CheckBox tl;
+    private CheckBox tl;
     @FXML
-    CheckBox tr;
+    private CheckBox tr;
     @FXML
-    CheckBox th;
+    private CheckBox th;
     @FXML
-    Label brat;
+    private Label brat;
     @FXML
-    CheckBox bl;
+    private CheckBox bl;
     @FXML
-    CheckBox br;
+    private CheckBox br;
 
     @FXML
-    CheckBox bsp;
+    private CheckBox bsp;
 
     @FXML
-    Label zil;
+    private Label zil;
     @FXML
-    CheckBox zj;
+    private CheckBox zj;
     @FXML
-    CheckBox zt;
+    private CheckBox zt;
     @FXML
-    CheckBox zsp;
+    private CheckBox zsp;
     @FXML
-    Label tatr;
+    private Label tatr;
     @FXML
-    CheckBox ttj;
+    private CheckBox ttj;
     @FXML
-    CheckBox ttl;
+    private CheckBox ttl;
     @FXML
-    CheckBox ttt;
+    private CheckBox ttt;
 
     @FXML
-    Label kosi;
+    private Label kosi;
 
     @FXML
-    CheckBox kh;
+    private CheckBox kh;
     @FXML
-    CheckBox kj;
+    private CheckBox kj;
     @FXML
-    CheckBox ks;
+    private CheckBox ks;
 
     @FXML
     private Button urob;
@@ -84,8 +88,10 @@ public class AtrakcieController {
 
     private NovyTrip novyTrip = new NovyTrip();
 
+    /**
+     *volenie kokrétnyhc aktivít
+     */
     public void vyber(ActionEvent actionEvent) {
-
         if (actionEvent.getSource() == lezenie)
             novyTrip.setLezenie();
         else if (actionEvent.getSource() == rafting)
@@ -100,30 +106,40 @@ public class AtrakcieController {
             novyTrip.setHrad();
 
     }
+
+    /**
+     * tu dochádza k využitiu vlastnej podmienky, pokiaľ uživateľ nezvolil žiadu antrakciu , vyhodi chybu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void vykonaj(ActionEvent event) throws IOException {
 
-        lezenie.setVisible(false);
-        rafting.setVisible(false);
-        jaskyne.setVisible(false);
-        skok_padakom.setVisible(false);
-        hrad.setVisible(false);
-        urob.setVisible(false);
-        turistika.setVisible(false);
-        //tieto jasyne trea doriešiť
+        try {
+            novyTrip.Overenie1();
+            lezenie.setVisible(false);
+            rafting.setVisible(false);
+            jaskyne.setVisible(false);
+            skok_padakom.setVisible(false);
+            hrad.setVisible(false);
+            urob.setVisible(false);
+            turistika.setVisible(false);
+            zvolit.setVisible(true);
+            //pridanie noveho observera tymu stav od arraylistu observerov
+            novyTrip.Informer(new Stav(novyTrip));
 
 
-        //trencin
-        if (novyTrip.getLezenie()||novyTrip.getRafting()||novyTrip.getHrad()) {
-            tren.setVisible(true);
+            //trencin
+            if (novyTrip.getLezenie() || novyTrip.getRafting() || novyTrip.getHrad()) {
+                tren.setVisible(true);
 
-            if (novyTrip.getLezenie())
-                tl.setVisible(true);
-            if (novyTrip.getRafting())
-                tr.setVisible(true);
-            if (novyTrip.getHrad())
-                th.setVisible(true);
-        }
+                if (novyTrip.getLezenie())
+                    tl.setVisible(true);
+                if (novyTrip.getRafting())
+                    tr.setVisible(true);
+                if (novyTrip.getHrad())
+                    th.setVisible(true);
+            }
 
             //bratislava
             if (novyTrip.getLezenie() || novyTrip.getRafting() || novyTrip.getSkokpadakom()) {
@@ -135,53 +151,61 @@ public class AtrakcieController {
                 if (novyTrip.getSkokpadakom())
                     bsp.setVisible(true);
             }
-         //Žilina
-        if (novyTrip.getJaskyne() || novyTrip.getTuristika() || novyTrip.getSkokpadakom()) {
-            zil.setVisible(true);
-            if (novyTrip.getJaskyne())
-                zj.setVisible(true);
-            if (novyTrip.getTuristika())
-                zt.setVisible(true);
-            if (novyTrip.getSkokpadakom())
-                zsp.setVisible(true);
-        }
-        //Tatry
-        if (novyTrip.getJaskyne() || novyTrip.getTuristika() || novyTrip.getLezenie()) {
-            tatr.setVisible(true);
-            if (novyTrip.getJaskyne())
-                ttj.setVisible(true);
-            if (novyTrip.getTuristika())
-                ttt.setVisible(true);
-            if (novyTrip.getLezenie())
-                ttl.setVisible(true);
-        }
-        //Kosice
-        if (novyTrip.getHrad() || novyTrip.getJaskyne() || novyTrip.getSkokpadakom()) {
-            kosi.setVisible(true);
-            if (novyTrip.getHrad())
-                kh.setVisible(true);
-            if (novyTrip.getJaskyne())
-                kj.setVisible(true);
-            if (novyTrip.getSkokpadakom())
-                ks.setVisible(true);
-        }
+            //Žilina
+            if (novyTrip.getJaskyne() || novyTrip.getTuristika() || novyTrip.getSkokpadakom()) {
+                zil.setVisible(true);
+                if (novyTrip.getJaskyne())
+                    zj.setVisible(true);
+                if (novyTrip.getTuristika())
+                    zt.setVisible(true);
+                if (novyTrip.getSkokpadakom())
+                    zsp.setVisible(true);
+            }
+            //Tatry
+            if (novyTrip.getJaskyne() || novyTrip.getTuristika() || novyTrip.getLezenie()) {
+                tatr.setVisible(true);
+                if (novyTrip.getJaskyne())
+                    ttj.setVisible(true);
+                if (novyTrip.getTuristika())
+                    ttt.setVisible(true);
+                if (novyTrip.getLezenie())
+                    ttl.setVisible(true);
+            }
+            //Kosice
+            if (novyTrip.getHrad() || novyTrip.getJaskyne() || novyTrip.getSkokpadakom()) {
+                kosi.setVisible(true);
+                if (novyTrip.getHrad())
+                    kh.setVisible(true);
+                if (novyTrip.getJaskyne())
+                    kj.setVisible(true);
+                if (novyTrip.getSkokpadakom())
+                    ks.setVisible(true);
+            }
+
+        } catch (Invalid_expection ex) {
+            lab.setText(ex.getMessage());
         }
 
+    }
 
 
-
-        @FXML
-        private void zvol (ActionEvent event) throws IOException {
-        if(tl.isSelected()|| tr.isSelected()|| th.isSelected())
-            novyTrip.tn(tl,tr,th);
-        if(bl.isSelected()||br.isSelected()||bsp.isSelected())
+    /**
+     * vytváranie objektov pre dané destinácie a prechod do ďaľšej scény
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void zvol(ActionEvent event) throws IOException {
+        if (tl.isSelected() || tr.isSelected() || th.isSelected())
+            novyTrip.tn(tl, tr, th);
+        if (bl.isSelected() || br.isSelected() || bsp.isSelected())
             novyTrip.bt(bl, br, bsp);
-        if(zt.isSelected()||zj.isSelected()||zsp.isSelected())
-                novyTrip.za(zt, zj,zsp);
-        if(ttj.isSelected()||ttt.isSelected()||ttl.isSelected())
-                novyTrip.tt(ttj, ttt, ttl);
-        if(ks.isSelected()||kh.isSelected()||kj.isSelected())
-                novyTrip.ks(ks,kh,kj);
+        if (zt.isSelected() || zj.isSelected() || zsp.isSelected())
+            novyTrip.za(zt, zj, zsp);
+        if (ttj.isSelected() || ttt.isSelected() || ttl.isSelected())
+            novyTrip.tt(ttj, ttt, ttl);
+        if (ks.isSelected() || kh.isSelected() || kj.isSelected())
+            novyTrip.ks(ks, kh, kj);
         Parent vyberParent = FXMLLoader.load(getClass().getResource("vyber.fxml"));
         Scene vyberScene = new Scene(vyberParent);
         Stage window = (Stage) zvolit.getScene().getWindow();
@@ -190,8 +214,7 @@ public class AtrakcieController {
         window.show();
 
 
-        }
-
-
-
     }
+
+
+}

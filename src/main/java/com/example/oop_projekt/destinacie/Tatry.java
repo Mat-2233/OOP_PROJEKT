@@ -1,8 +1,17 @@
 package com.example.oop_projekt.destinacie;
 
-import com.example.oop_projekt.atrakcie.Turistika;
 
+/**
+ * obsahuje v sebe informácia o dlžke trasy , nákladoch na cestu a trvanie cesty v minútach
+ * medzi tatramy a ostatnými destináciami vo forme LOW a HIGH.
+ * informácie su uložené vo forme:"dlzka v klimotreoch.naklady na trasu v eurach!d=lžka trasy v minútach napr(222.12.140)
+ */
 public class Tatry extends Destinacia{
+    /**
+     * ked sa používa táto funkcia
+     * používatel už má zvolené destinácia aj atrakcie v nej, na základe toho
+     * sa určí cena
+     */
     public void setTTAtrakcieValue(){
         if(getJaskyne() != null)
             getJaskyne().setJaskyneVstupne(this);

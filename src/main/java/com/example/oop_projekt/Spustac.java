@@ -9,11 +9,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+/**
+ *Spúšťač ktorý otvára prvé okno
+ */
+public class Spustac extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Spustac.class.getResource("prvascena.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("prvascena.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Projekt");
         stage.setScene(scene);

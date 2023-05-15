@@ -1,6 +1,17 @@
 package com.example.oop_projekt.destinacie;
 
-public class Kosice extends Destinacia{
+
+/**
+ * obsahuje v sebe informácia o dlžke trasy , nákladoch na cestu a trvanie cesty v minútach
+ * medzi kosicami a ostatnými destináciami vo forme LOW a HIGH.
+ * informácie su uložené vo forme:"dlzka v klimotreoch.naklady na trasu v eurach!d=lžka trasy v minútach napr(222.12.140)
+ */
+public class Kosice extends Destinacia {
+    /**
+     * ked sa používa táto funkcia
+     * používatel už má zvolené destinácia aj atrakcie v nej, na základe toho
+     * sa určí cena
+     */
     public void setKSAtrakcieValue(){
         if(getJaskyne() != null)
             getJaskyne().setJaskyneVstupne(this);

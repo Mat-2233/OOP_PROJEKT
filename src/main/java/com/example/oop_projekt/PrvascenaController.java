@@ -6,17 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Region;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Random;
 
-public class HelloController {
+/**
+ * prvá scéna, slúži na voľbu či chceme vytvoriť nový trip, alebo si pozrieť už exizstujúci
+ */
+public class PrvascenaController {
 
     @FXML
     private AnchorPane anchor;

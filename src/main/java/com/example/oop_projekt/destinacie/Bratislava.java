@@ -2,6 +2,11 @@ package com.example.oop_projekt.destinacie;
 
 import java.util.ArrayList;
 
+/**
+ * obsahuje v sebe informácia o dlžke trasy , nákladoch na cestu a trvanie cesty v minútach
+ * medzi bratislavou a ostatnými destináciami vo forme LOW a HIGH.
+ * informácie su uložené vo forme:"dlzka v klimotreoch.naklady na trasu v eurach!d=lžka trasy v minútach napr(222.12.140)
+ */
 public class Bratislava extends Destinacia {
     //pocet kilometrov, naklady na cestu ,a doba trvania v minutach
     private String ba_to_tn_low ="123.11!120";
@@ -48,6 +53,11 @@ public class Bratislava extends Destinacia {
         return ba_to_tt_low;
     }
 
+    /**
+     * ked sa používa táto funkcia
+     * používatel už má zvolené destinácia aj atrakcie v nej, na základe toho
+     * sa určí cena
+     */
     public void setBAAtrakcieValue(){
     if(getRafting() != null)
         getRafting().setRaftingVstupne(this);
@@ -57,14 +67,7 @@ public class Bratislava extends Destinacia {
         getSkokpadakom().setSkokpadakomVstupne(this);
 }
 
-    public void setDlzkakilometrov(Zilina mesto) {;}
-
-/* public void bttest(){
-        System.out.println(getLezenie());
-        System.out.println(getLRafting());
-        System.out.println(getSkokpadakom());
 
 
-    }*/
 }
 

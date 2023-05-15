@@ -5,36 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_projekt.AtrakcieController">
+<AnchorPane fx:id="anchor" prefHeight="356.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_projekt.AtrakcieController">
    <children>
-      <Label layoutX="265.0" layoutY="56.0" text="atrakcie" />
-      <CheckBox fx:id="lezenie" layoutX="39.0" layoutY="98.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Skalné lezenie" />
-      <CheckBox fx:id="rafting" layoutX="40.0" layoutY="123.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="105.0" text="Rafting" />
-      <CheckBox fx:id="skok_padakom" layoutX="37.0" layoutY="200.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Skok padákom" />
-      <CheckBox fx:id="jaskyne" layoutX="39.0" layoutY="168.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Návšteva jaskyne" />
-      <CheckBox fx:id="turistika" layoutX="39.0" layoutY="228.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Turistika" />
-      <CheckBox fx:id="hrad" layoutX="36.0" layoutY="262.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Návšeteva Hradu" />
-      <Button fx:id="urob" layoutX="44.0" layoutY="319.0" mnemonicParsing="false" onAction="#vykonaj" prefHeight="51.0" prefWidth="87.0" text="Urob" />
-      <CheckBox fx:id="tl" layoutX="359.0" layoutY="115.0" mnemonicParsing="false"  text="Lezenie" visible="false" />
-      <Label fx:id="tren" layoutX="358.0" layoutY="90.0" text="Trenčín" visible="false" />
-      <Label fx:id="brat" layoutX="471.0" layoutY="82.0" text="Bratislava" visible="false" />
-      <CheckBox fx:id="bl" layoutX="471.0" layoutY="115.0" mnemonicParsing="false" text="Lezenie" visible="false" />
-      <CheckBox fx:id="br" layoutX="472.0" layoutY="134.0" mnemonicParsing="false" text="Rafting" visible="false" />
-      <CheckBox fx:id="bsp" layoutX="471.0" layoutY="160.0" mnemonicParsing="false" text="Skok padákom" visible="false" />
-      <CheckBox fx:id="tr" layoutX="360.0" layoutY="135.0" mnemonicParsing="false" text="Rafting" visible="false" />
-      <Button fx:id="zvolit" layoutX="445.0" layoutY="319.0" mnemonicParsing="false" onAction="#zvol" prefHeight="51.0" prefWidth="77.0" text="Zvoliť" />
-      <CheckBox fx:id="th" layoutX="361.0" layoutY="160.0" mnemonicParsing="false" text="Návšteva hradu" visible="false" />
-      <Label fx:id="zil" layoutX="358.0" layoutY="191.0" text="Žilina" visible="false" />
-      <CheckBox fx:id="zj" layoutX="354.0" layoutY="219.0" mnemonicParsing="false"  text="Návšteva jaskyne" visible="false" />
-      <CheckBox fx:id="zt" layoutX="353.0" layoutY="245.0" mnemonicParsing="false"  text="Turistika" visible="false" />
-      <CheckBox fx:id="zsp" layoutX="353.0" layoutY="270.0" mnemonicParsing="false" text="Skok padákom" visible="false" />
-      <Label fx:id="tatr" layoutX="470.0" layoutY="199.0" text="Tatry" visible="false" />
-      <CheckBox fx:id="ttj" layoutX="466.0" layoutY="219.0" mnemonicParsing="false" text="Návšteva jaskyne" visible="false" />
-      <CheckBox fx:id="ttt" layoutX="466.0" layoutY="245.0" mnemonicParsing="false"  text="Turistika" visible="false" />
-      <CheckBox fx:id="ttl" layoutX="466.0" layoutY="271.0" mnemonicParsing="false"  text="Lezenie" visible="false" />
-      <CheckBox fx:id="kh" layoutX="249.0" layoutY="115.0" mnemonicParsing="false" text="Návšteva hradu" visible="false" />
-      <CheckBox fx:id="kj" layoutX="249.0" layoutY="135.0" mnemonicParsing="false"  text="Návšteva jaskyne" visible="false" />
-      <CheckBox fx:id="ks" layoutX="249.0" layoutY="159.0" mnemonicParsing="false"  text="Skok padákom" visible="false" />
-      <Label fx:id="kosi" layoutX="251.0" layoutY="89.0" text="Košice" visible="false" />
+      <Label fx:id="lab" layoutX="256.0" layoutY="81.0" text="atrakcie" />
+      <CheckBox fx:id="lezenie" layoutX="408.0" layoutY="227.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Skalné lezenie" />
+      <CheckBox fx:id="rafting" layoutX="246.0" layoutY="227.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="105.0" text="Rafting" />
+      <CheckBox fx:id="skok_padakom" layoutX="75.0" layoutY="184.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Skok padákom" />
+      <CheckBox fx:id="jaskyne" layoutX="75.0" layoutY="227.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Návšteva jaskyne" />
+      <CheckBox fx:id="turistika" layoutX="244.0" layoutY="184.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Turistika" />
+      <CheckBox fx:id="hrad" layoutX="408.0" layoutY="191.0" mnemonicParsing="false" onAction="#vyber" prefHeight="17.0" prefWidth="113.0" text="Návšeteva Hradu" />
+      <Button fx:id="urob" layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#vykonaj" prefHeight="51.0" prefWidth="87.0" text="Urob" />
+      <CheckBox fx:id="tl" layoutX="246.0" layoutY="106.0" mnemonicParsing="false" text="Lezenie" visible="false" />
+      <Label fx:id="tren" layoutX="245.0" layoutY="90.0" text="Trenčín" visible="false" />
+      <Label fx:id="brat" layoutX="410.0" layoutY="90.0" text="Bratislava" visible="false" />
+      <CheckBox fx:id="bl" layoutX="410.0" layoutY="106.0" mnemonicParsing="false" text="Lezenie" visible="false" />
+      <CheckBox fx:id="br" layoutX="411.0" layoutY="126.0" mnemonicParsing="false" text="Rafting" visible="false" />
+      <CheckBox fx:id="bsp" layoutX="410.0" layoutY="160.0" mnemonicParsing="false" text="Skok padákom" visible="false" />
+      <CheckBox fx:id="tr" layoutX="247.0" layoutY="134.0" mnemonicParsing="false" text="Rafting" visible="false" />
+      <Button fx:id="zvolit" layoutX="260.0" layoutY="319.0" mnemonicParsing="false" onAction="#zvol" prefHeight="51.0" prefWidth="77.0" text="Zvoliť" visible="false" />
+      <CheckBox fx:id="th" layoutX="247.0" layoutY="160.0" mnemonicParsing="false" text="Návšteva hradu" visible="false" />
+      <Label fx:id="zil" layoutX="78.0" layoutY="208.0" text="Žilina" visible="false" />
+      <CheckBox fx:id="zj" layoutX="75.0" layoutY="227.0" mnemonicParsing="false" text="Návšteva jaskyne" visible="false" />
+      <CheckBox fx:id="zt" layoutX="73.0" layoutY="253.0" mnemonicParsing="false" text="Turistika" visible="false" />
+      <CheckBox fx:id="zsp" layoutX="75.0" layoutY="279.0" mnemonicParsing="false" text="Skok padákom" visible="false" />
+      <Label fx:id="tatr" layoutX="408.0" layoutY="208.0" text="Tatry" visible="false" />
+      <CheckBox fx:id="ttj" layoutX="404.0" layoutY="227.0" mnemonicParsing="false" text="Návšteva jaskyne" visible="false" />
+      <CheckBox fx:id="ttt" layoutX="407.0" layoutY="253.0" mnemonicParsing="false" text="Turistika" visible="false" />
+      <CheckBox fx:id="ttl" layoutX="404.0" layoutY="279.0" mnemonicParsing="false" text="Lezenie" visible="false" />
+      <CheckBox fx:id="kh" layoutX="75.0" layoutY="115.0" mnemonicParsing="false" text="Návšteva hradu" visible="false" />
+      <CheckBox fx:id="kj" layoutX="75.0" layoutY="135.0" mnemonicParsing="false" text="Návšteva jaskyne" visible="false" />
+      <CheckBox fx:id="ks" layoutX="75.0" layoutY="160.0" mnemonicParsing="false" text="Skok padákom" visible="false" />
+      <Label fx:id="kosi" layoutX="75.0" layoutY="90.0" text="Košice" visible="false" />
    </children>
 </AnchorPane>
